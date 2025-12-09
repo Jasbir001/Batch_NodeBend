@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('common/menu') %>
+   <h1 align="center">Employee Registration Form</h1> 
+   <form action="/add_emp" method="post">
+    Enter Employee Name <input type="text" name="emp_name" required><br><br>
+    Enter Employee Email <input type="email" name="emp_email" required><br><br>
+    Enter State <select name="emp_state" required>
+        <option value="" selected disabled>Select State</option>
+        <option>Haryana</option>
+        <option>Punjab</option>
+        <option>Himachal</option>
+        <option>Delhi</option>
+        </select><br><br>
+        Enter Address <textarea name="address" required></textarea><br><br>
+        <button>Submit</button>
+
+</form>
+</body>
+</html>

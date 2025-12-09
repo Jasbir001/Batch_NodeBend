@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <%- include('common/menu') %>
+    <h1 align="center">Addition of Two number Addition</h1>
+    <form action ="/add_sum" method="post" align="center">
+        Enter First Number: <input type="number" name="a" required><br><br>
+        Enter Second Number: <input type="number" name="b" required><br><br>
+        <button>Calculate</button>
+    </form>
+    <% if (locals.result) { %>
+        <h1 align="center"><%= result %></h1>
+    <% } %>
+</body>
+</html>

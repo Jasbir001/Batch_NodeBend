@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('CDN/bootstrap.ejs') %>
+    <%- include ('Header/slider_css_js') %>
+
+</head>
+<body>
+    <%- include ('Header/Home_Header') %>
+    <%- include ('Gallery/Gallery.ejs') %>
+    <h2 class=" bg-red text-white p-2 scroll-mseg">
+        <marquee scrollamount="15" onmouseover="this.stop()" onmouseout="this.start()">
+        Welcome to VisionCare Eye Hospital — Your Eyes, Our Priority.
+        Advanced Eye Treatment with Latest Technology.
+        Book Your Eye Check-Up Today for Clear & Healthy Vision.
+        Specialists in Cataract, Lasik & Retina Care.
+        Experience World-Class Eye Care at Affordable Prices.
+        Your Vision Matters — Trust the Experts.
+        Bringing Clarity to Your World, One Eye at a Time.
+        24×7 Emergency Eye Care Available.
+        <marquee>
+    </h2>
+
+    <%- include ('CDN/javascript.ejs') %>
+</body>
+</html>

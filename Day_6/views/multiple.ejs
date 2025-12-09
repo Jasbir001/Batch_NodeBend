@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('common/menu') %>
+    <h1 aling="center">Multiplecation</h1>
+    <form action="/multiply" method="GET" align="center">
+        Enter A value: <input type="number" required name="a"><br><br>
+        Enter B value: <input type="number" required name="b"><br><br>
+        <button>Submit</button>
+    </form>
+    <% if(locals.result){ %>
+        <h2 align="center"><%= result %></h2>
+        <% }
+    %>
+</body>
+</html>

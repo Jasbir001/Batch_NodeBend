@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.bootstrap5.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.5/css/buttons.bootstrap5.css"/> -->
+</head>
+<body>
+    <%- include('common/menu') %>
+    <h1 class="text-center mt-4 mb-3"> Student record list</h1>
+    <div class="container mt-b">
+        <div class="row">
+            <div class="col-sm-10 offset-sm-1">
+                <% if(locals.msg) 
+                    { %> 
+                        <div class="alert alert-danger">
+                            <%= msg %>
+                        </div>
+                    <% }
+                %>
+                else{
+                  
+                        <table class="table table-bordered table-striped" id="student_record" >
+                    <thead >
+                        <tr class="text-center">
+                            <th>Name</th>
+                            <th>Roll</th>
+                            <th>Branch</th>
+                            <th>Address</th>
+                            <th>Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% data.forEach(function(student) { %> 
+                        <tr>
+                            <td><%= student.name %></td>
+                            <td><%= student.roll %></td>
+                            <td><%= student.branch %></td>
+                            <td><%= student.address %></td>
+                            <td>
+                                <a href="/delete_student/<%=student.roll %>" class="btn btn-danger" onclick="return confirm('Are you Sure')">Delete</a>
+                                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#student_update_modal" onclick="set_data('<%= student.name %>','<%= student.roll %>','<%= student.branch %>','<%= student.address %>')">Update</a>
+                            </td>
+                        </tr>
+                     <% }) 
+                     %> 
+
+
+                     <!-- <% for(var i=0;i < data.length;i++)
+                     { %>
+                    <tr>
+                        <td><%= data[i].name%></td>
+                        <td><%= data[i].roll%></td>
+                        <td><%= data[i].branch%></td>
+                        <td><%= data[i].address%></td>
+                        <td>
+                            <a href="" class="btn btn-danger" onclick="return confirm('Are you Sure')">Delete</a>
+                            <a href="" class="btn btn-primary" onclick="">Update</a>
+                        </td>
+                    </tr>
+                    <% } %> -->
+                      <% } %>
+
+                    </tbody>
+
+                        </table>
+                    
+             
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- student_update_modal popup -->
+    <div class="modal fade" id="student_update_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Manage Student</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form method="post" action="/update_student" >
+                            <div class="mt-3 mb-2">
+                            <label for="stuname">Name</label>
+                            <input type="text" name="name" id="stuname" required class="form-control"/>
+                        </div>
+                        <div class="mt-3 mb-2">
+                            <label for="sturoll">Roll</label>
+                            <input type="number" readonly name="roll" id="sturoll" required class="form-control"/>
+                        </div>
+                        <div class="mt-3 mb-2">
+                            <label for="stubranch">Branch</label>
+                             <select name="branch" id="stubranch" required class="form-control">
+                                <option value="" selected disabled>Select Branch</option>
+                                <option>Computer Science</option>
+                                <option value="mech">Mechnical Engg</option>
+                                <option>Civil Engg</option>
+                                <option>Electrical Engg</option>
+                             </select>
+                        </div>
+                         <div class="mt-3 mb-2">
+                            <label for="stuaddress">Address</label>
+                            <textarea name="address" id="stuaddress" required class="form-control"></textarea>
+                        </div>
+                          <div class="mt-3 mb-2">
+                            <button class="btn btn-primary">Update Now</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- student_update_modal popup code end -->
+
+
+   <script src="https://code.jquery.com/jquery-3.7.1.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.3.5/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.3.5/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.5/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.5/js/buttons.bootstrap5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.2.5/js/buttons.html5.min.js"></script>
+  
+     <!-- $('#student-record').DataTable(); -->
+
+    <script src="../public/js/my.js"></script>
+    
+</body>
+</html>
