@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('CDN/bootstrap.ejs') %>
+    <%- include ('Header/slider_css_js') %>
+
+</head>
+<body>
+    <%- include ('Header/Home_Header') %>
+    <%- include ('Gallery/gallery.ejs') %>
+    <h2 class=" bg-red text-white p-2 scroll-mseg">
+        <marquee scrollamount="15" onmouseover="this.stop()" onmouseout="this.start()">
+        Welcome to VisionCare Eye Hospital — Your Eyes, Our Priority.
+        Advanced Eye Treatment with Latest Technology.
+        Book Your Eye Check-Up Today for Clear & Healthy Vision.
+        Specialists in Cataract, Lasik & Retina Care.
+        Experience World-Class Eye Care at Affordable Prices.
+        Your Vision Matters — Trust the Experts.
+        Bringing Clarity to Your World, One Eye at a Time.
+        24×7 Emergency Eye Care Available.
+        </marquee>
+    </h2>
+
+    <div class="container mt-4">
+        <div class="row mt-5">
+        <h3 class="text-center text-danger">Why Choose us?</h3>
+        <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                  <img src="../public/image/hos1.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">50 Years Old</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <div align="center"><a href="#" class="btn btn-danger">Read More</a></div>
+                  </div>
+                </div>
+        </div>
+
+        <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                  <img src="../public/image/hos2.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Govt Reconize</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <div align="center"><a href="#" class="btn btn-danger">Read More</a></div>
+                  </div>
+                </div>
+        </div>
+
+        <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                  <img src="../public/image/hos1.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Cash Less</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <div align="center"><a href="#" class="btn btn-danger"align="center">Read More</a></div>
+                  </div>
+                </div>
+        </div>
+
+</div>
+    </div>
+
+
+    <div class="container-4">
+        <div class="row mt-5">
+            <div class="col-6">
+            <img src="../public/image/girls_right.jpg" class="img-fluid">
+            </div>
+            <div class="col-6">
+                <h2 class="text-danger mb-3">Book Appointment</h2>
+                <form action="" method="post">
+            <div class="mb-3">
+               <label for="name" class="form-label">Name</label>
+               <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+               <label for="email" class="form-label">Email address</label>
+               <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+               <label for="phone" class="form-label">Phone Number</label>
+               <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="mb-3">
+               <label for="date" class="form-label">Preferred Date</label>
+               <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+             <div class="mb-3">
+               <label for="time" class="form-label">Preferred Time</label>
+               <input type="time" class="form-control" id="time" name="time" required>
+            </div>
+             <div class="mb-3">
+               <label for="address" class="form-label">Address</label>
+               <textarea class="form-control"  id="address" name="address" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger">Submit</button>
+         </form>
+            </div>
+        </div> 
+
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row mt-4">
+            <div class="col-sm-6">
+                    <h3>FAQ</h3>
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What is eye care?
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                          We offer complete eye-care solutions including routine eye checkups, cataract surgery, LASIK vision correction, retina treatment, glaucoma management, and pediatric eye care. Our modern equipment and expert doctors ensure accurate diagnosis and safe, effective treatment.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Typical Symptoms of Eye Problem?
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            You can easily book your appointment online through our website or by calling our reception desk. Just select your preferred doctor, choose a time slot, and confirm your details. Once booked, you will receive a confirmation message instantly.
+                        </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            When should I get my eyes checked?
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                          It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+            <div class="col-sm-6">
+                          <h3 class="text-danger">Our Mission</h3>
+                <p class="text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                     Cumque incidunt quisquam reprehenderit dolore. Obcaecati,
+                      eveniet nemo? Cum, possimus quos. Sit maiores dolores laboriosam
+                       soluta maxime blanditiis, eum obcaecati ratione! Illo fugiat accusamus
+                        nostrum. Nobis vitae debitis voluptate possimus quas ipsum eaque
+                         quaerat quia, impedit iure quo aperiam eos! Quaerat distinctio architecto
+                          laborum officiis quis, adipisci, consequatur nisi sed nostrum aspernatur
+                           est doloremque, voluptatum quibusdam laudantium praesentium. Culpa maiores
+                            nihil labore molestias consequatur, nesciunt necessitatibus excepturi amet
+                             officia reprehenderit quae rerum?</p>
+                
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <%- include ('Footer/Dashboard_footer.ejs') %>
+    <%- include ('CDN/javascript.ejs') %>
+</body>
+</html>
