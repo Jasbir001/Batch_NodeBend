@@ -218,11 +218,11 @@
 	width: 0;
 	border-radius: 50%;
 	background: rgba(0, 0, 0, 0);
-	-webkit-box-shadow: inset 0 0 0 1px #ff0000;
-	box-shadow: inset 0 0 0 1px #ff0000;
+	-webkit-box-shadow: inset 0 0 0 1px #ff0004;
+	box-shadow: inset 0 0 0 1px #ff0004;
 }
 #wowslider-container1 .ws_bullets a.ws_selbull {
-	background: #ff0000;
+	background: #ff0004;
 	padding: 6px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -234,7 +234,7 @@
 	position:absolute;
 	font: 3.2em "ws-ctrl-bootstrap";
 	z-index:60;
-	color: #ff0000;
+	color: #ff0004;
 	overflow: hidden;
 	width: 15%;
 	height: 100%;
@@ -265,7 +265,7 @@
 	right: 0;
 	text-align: center;
 	vertical-align: middle;
-	color: #ff0000;
+	color: #ff0004;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
 #wowslider-container1 a.ws_next:after{
@@ -287,7 +287,7 @@
 	left: 50%;
 	margin-top: -0.5em;
 	margin-left: -0.3125em;
-	color: #ff0000;
+	color: #ff0004;
 	opacity: 0.5;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 	text-decoration: none;
@@ -321,7 +321,7 @@
 	height: 0; 
 	border-left: 7px solid transparent;
 	border-right: 7px solid transparent;
-	border-top: 7px solid #ff0000;
+	border-top: 7px solid #ff0004;
 
 	bottom:-10px;
 	margin-left:-7px;
@@ -329,8 +329,8 @@
 }#wowslider-container1 .ws-title{
 	position: absolute;
 	background: none;
-	font: 4em 'Fjalla One', Arial, sans-serif;
-	color:#ff0000;
+	font: 3.2em 'Fjalla One', Arial, sans-serif;
+	color:#ff0004;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 	bottom: 50px;
 	top: auto;
@@ -365,7 +365,7 @@
 	left:-43px;
 	visibility:hidden;
 	position:absolute;
-    border: 1px solid #ff0000;
+    border: 1px solid #ff0004;
 	max-width:none;
 }
 #wowslider-container1 .ws_bullets a:hover img{
@@ -382,7 +382,7 @@
 	overflow:hidden;
 	position:relative;
 	width:85px;
-	background-color:#ff0000;
+	background-color:#ff0004;
 }
 #wowslider-container1  .ws_bullets .ws_bulframe{
 	display:none;
@@ -391,7 +391,7 @@
 	overflow:visible;
 	position:absolute;
 	cursor:pointer;
-    border: 3px solid #ff0000;
+    border: 3px solid #ff0004;
 }#wowslider-container1 .ws_bulframe div div{
 	height: auto;
 }
