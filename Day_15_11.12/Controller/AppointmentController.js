@@ -1,6 +1,6 @@
 const appointmentModal = require('../Modal/appointment')
 class AppointmentController{
-    Add_appointment(re,req){
+    Add_appointment(req,res){
         if (req.method=='GET')
         {
                 res.render('home')
