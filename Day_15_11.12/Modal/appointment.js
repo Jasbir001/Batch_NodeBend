@@ -2,7 +2,7 @@ const db=require("../Databsae/myconnect")
 
 const Appointment= 
 { 
-    create:(data, callback)=>
+    create : (data, callback)=>
     {
     const q = `insert into appointment (name, email, phone, presefered_date , prefferr_time, address) values ('${data.Name}','${data.Email}','${data.Phone}','${data.Date}','${data.Time}','${data.Address}')`
     db.query(q,callback)
