@@ -1,0 +1,37 @@
+.hospital_navbar{
+    background-color: rgba(249, 52, 22, 0.968); 
+}
+.hospital_navbar a{
+    color:rgb(239, 244, 244);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.hospital_navbar a:hover{
+    color:grey;
+}
+.hospital_navbar button:hover{
+    background-color: blue;
+    color: rgb(246, 246, 250);
+}
+.scroll-mseg{
+    background-color: rgba(249, 52, 22, 0.968); 
+    cursor:pointer;
+}
+.donate{
+    animation:blinker 2s linear infinite;
+}
+@keyframes blinker{
+    50% {
+        opacity:0;
+    }
+}
+
+
+.hline{
+    color:red;
+
+}
+
+.hicone{
+    color:red;
+}
