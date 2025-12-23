@@ -189,13 +189,13 @@ class Sets extends Auth
         res.render('Login',{mesg:"Please Login Here"})
     }
     else{
-        const data ={
+        const data = {
             Email:req.body.email,
             Mobile:req.body.mobile,
             Ayushcard:req.body.ayushcard,
             Dhistory:req.body.dhistory,
-            Profile_Photo:req.body.userphoto
-        }
+            Profile_Photo:req.file.filename   
+        };
 
         usermodel.Patient_Profile_update(data,(err)=>{
             if(err)
