@@ -194,13 +194,13 @@ class Sets extends Auth
             Mobile:req.body.mobile,
             Ayushcard:req.body.ayushcard,
             Dhistory:req.body.dhistory,
-            Profile_Photo:req.file.filename
+            Profile_Photo:req.body.userphoto
         }
 
         usermodel.Patient_Profile_update(data,(err)=>{
             if(err)
             {
-                res.render('Login',{mesg:"Error in profile Completion Contact Again"})
+                res.render('Login',{mesg:"Error in profile Completion Contact Again"+err})
             }
             else
             {
