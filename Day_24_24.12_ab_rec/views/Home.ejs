@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+   <%- include('CDN/bootstrap.ejs') %>
+      <%- include('Header/slider_css_js.ejs') %>
+</head>
+
+<body>
+   <%- include('Header/Home_Header.ejs') %>
+      <%- include('Gallery/gallery.ejs') %>
+         <h2 class="text-white p-2 scroll_mesg">
+            <marquee scrollamount="15" onmouseover="this.stop()" onmouseout="this.start()">
+               Welcome to VisionCare Eye Hospital – Your Trusted Eye Specialists
+               . Comprehensive Eye Examinations for All Age Groups
+               . Advanced Cataract Surgery With Latest Technology
+               . Expert Treatment for Glaucoma, Retina, and Corneal Disorders
+               . State-of-the-Art Operation Theatres & Diagnostic Equipment
+               . 24/7 Emergency Eye Care Services Available
+               . Book Your Appointment Online for Faster Service
+               . Experienced Ophthalmologists & Friendly Medical Staff
+               . Affordable Eye Checkups and Surgery Packages
+            </marquee>
+         </h2>
+
+         <div class="container mt-4">
+            <h3 class="text-center text-danger">Why Choose us?</h3>
+            <div class="row mt-5">
+               <div class="col-sm-4">
+                  <div class="card" style="width: 18rem;">
+                     <img src="../public/images/50year.jpg" class="card-img-top" alt="...">
+                     <div class="card-body">
+                        <h5 class="card-title">50 Year Old</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                           the card’s content.</p>
+                        <div class="text-center"><a href="#" class="btn btn-danger">Read More</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-4">
+                  <div class="card" style="width: 18rem;">
+                     <img src="../public/images/govt.jpg" class="card-img-top" alt="...">
+                     <div class="card-body">
+                        <h5 class="card-title">Govt Recongnise</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                           the card’s content.</p>
+                        <div class="text-center"><a href="#" class="btn btn-danger">Read More</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-4">
+                  <div class="card" style="width: 18rem;">
+                     <img src="../public/images/cash2.jpg" class="card-img-top" alt="...">
+                     <div class="card-body">
+                        <h5 class="card-title">Cash Less</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                           the card’s content.</p>
+                        <div class="text-center"><a href="#" class="btn btn-danger">Read More</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="container mt-5">
+            <div class="row mt-2">
+               <div class="col-6">
+                  <img src="../public/images/w1.webp" class="img-fluid">
+               </div>
+               <div class="col-6 mt-5">
+                  <h2 class="text-danger mb-3">Book Appointment</h2>
+                  <form action="/bookapointment" method="post">
+                     <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                     </div>
+                     <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                     </div>
+                     <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                     </div>
+                     <div class="mb-3">
+                        <label for="date" class="form-label">Preferred Date</label>
+                        <input type="date" class="form-control" id="date" name="date" required>
+                     </div>
+                     <div class="mb-3">
+                        <label for="time" class="form-label">Preferred Time</label>
+                        <input type="time" class="form-control" id="time" name="time" required>
+                     </div>
+                     <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea class="form-control" id="address" name="address" required></textarea>
+                     </div>
+                     <button type="submit" class="btn btn-danger">Submit</button>
+                  </form>
+                   <div class="mt-3 mb-2 text-center alert-success p-2">
+                      <% if(locals.msg){ %>
+                         <h4><%= msg %></h4>
+                      <% } %>
+                   </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="container mt-5">
+            <div class="row mt-4">
+                   <div class="col-sm-6">
+                    <h3 class="text-danger mb-3">FAQ</h3>
+                  <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                               what is eye care?
+                              </button>
+                           </h2>
+                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                 Eye care refers to the practices and measures taken to maintain and improve the health of the eyes. It involves regular eye examinations, proper hygiene, protection from harmful UV rays, and addressing any vision problems or eye conditions promptly. Eye care also includes lifestyle choices such as a balanced diet, adequate sleep, and avoiding excessive screen time to prevent eye strain.
+                               </div>
+                           </div>
+                        </div>
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Typical Symptoms of Eye Problems?
+                              </button>
+                           </h2>
+                           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                 Typical symptoms of eye problems can include:
+                                 <ul>
+                                   <li>Blurred or distorted vision</li>
+                                   <li>Eye pain or discomfort</li>
+                                   <li>Redness or inflammation</li>
+                                   <li>Excessive tearing or dryness</li>
+                                   <li>Floaters or flashes of light</li>
+                                   <li>Difficulty seeing at night</li>
+                                   <li>Double vision</li>
+                                   <li>Itching or burning sensation</li>
+                                 </ul>
+                                 If you experience any of these symptoms, it is important to consult an eye care professional for
+                              </div>
+                           </div>
+                        </div>
+                        <div class="accordion-item">
+                           <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              How often should I have my eyes examined?
+                              </button>
+                           </h2>
+                           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                 It is generally recommended to have a comprehensive eye examination every one to two years, depending on your age, risk factors, and overall eye health. Children should have their first eye exam at six months of age, followed by additional exams at age three and before starting school. Adults under 40 with no symptoms or risk factors can have an exam every two years, while those over 40 or with risk factors such as diabetes or a family history of eye disease should have annual exams. However, it is best to consult with an eye care professional for personalized recommendations.
+                              </div>
+                           </div>
+                        </div>
+                        </div>
+                   </div>
+               <div class="col-sm-6">
+                  <h3 class="text-danger mb-3">Our Mission</h3>
+                  <p class="text-justify">Our mission is to provide exceptional eye care services that enhance the quality of life for our
+                     patients. We are committed to delivering comprehensive and compassionate care through advanced
+                     technology, skilled professionals, and a patient-centered approach. We strive to promote eye health
+                     awareness and education in our community while ensuring accessibility and affordability for all.
+                     Our mission is to provide exceptional eye care services that enhance the quality of life for our
+                     patients. We are committed to delivering comprehensive and compassionate care through advanced
+                     technology, skilled professionals, and a patient-centered approach. We strive to promote eye health
+                     awareness and education in our community while ensuring accessibility and affordability for all
+                     Our mission is to provide exceptional eye care services that enhance the quality of life for our
+                     patients. We are committed to delivering comprehensive and compassionate care through advanced
+                     technology, skilled professionals, and a patient-centered approach. We strive to promote eye health
+                     awareness and education in our community while ensuring accessibility and affordability for all
+                  </p>
+               </div>
+            </div>
+         </div>
+
+
+
+   <%- include('Footer/Dashboard_Footer.ejs') %>
+
+   <%- include('CDN/javascript.ejs') %>
+      <%- include('chat/chat.ejs') %>
+</body>
+
+</html>

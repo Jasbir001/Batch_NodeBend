@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('CDN/bootstrap.ejs') %>
+
+</head>
+<body>
+ <%- include('Header/Home_Header.ejs') %>   
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-4 offset-sm-1">
+            <img src="../public/images/Account.png" class="img-fluid mx-auto d-block" alt="Logo" >
+        </div>
+      <div class="col-sm-4 mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+            <h3 class="text-danger">Create Your Account</h3>
+        </div>
+         <div class="card-body">
+        <form action="/paccount" method="post">
+            <div class="form-group mt-4">
+                <label for="username" class="text-danger">Name</label>
+                <input type="text" class="form-control" id="username" name="username" required> 
+                <label for="email" class="text-danger mt-3">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+                <label for="password" class="text-danger mt-3">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required> 
+                <label for="cpassword" class="text-danger mt-3">Confirm Password</label>
+                <input type="password" class="form-control" id="cpassword" name="cpassword" required> 
+                <div class="mt-3">
+                <label for="gender" class="text-danger mb-2">Gender</label> <br>
+                <input type="radio" id="male" name="gender" value="male" class="mx-2" required>Male
+                <input type="radio" id="female" name="gender" value="female" class="mx-2" required>Female
+                </div>
+                <label for="address" class="text-danger mt-3">Address</label>
+                <textarea class="form-control" id="address" name="address" required> </textarea>
+            </div>
+            <button type="submit" class="btn btn-danger mt-4 w-100">Submit</button>
+        </form>
+         <div class="text-center mt-2">
+             <a href="/plogin" class="text-danger">Already have an Account?</a>
+             <% if(locals.mesg) { %>
+                 <h6 class="mt-3 text-warning" id="result"><%=mesg%></h6>
+                 <script>
+                    function hide_message()
+                    {
+                      document.getElementById("result").innerText="";
+                    }
+                    setTimeout(hide_message,2000);
+                 </script>
+             <%}%>
+         </div>
+        </div>
+         </div>
+      </div>
+    </div>
+</div>
+
+<%- include('CDN/javascript.ejs') %>
+<%- include('chat/chat.ejs') %>
+<%- include('Footer/Dashboard_Footer.ejs') %>
+
+</body>
+</html>

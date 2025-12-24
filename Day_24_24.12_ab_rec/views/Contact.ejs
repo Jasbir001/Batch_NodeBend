@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+<%- include('CDN/bootstrap.ejs') %> 
+</head>
+<body>
+<%- include('Header/Home_Header.ejs') %> 
+ <div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-sm-4 offset-sm-1">
+            <h4 class="mb-4 text-danger">Contact Information</h4>
+            <p><strong>Phone:</strong> (123) 456-7890 , (123) 856-7890</p>
+            <p><strong>Email:</strong>contact@drishtivision.com , hr@drishtivision.com</p>
+            <p><strong>Address:</strong> Sco 112-113 First Floor,Chandigarh Sector-34A Pin:160022</p>
+          <hr class="hline">
+            <div class="mt-3">
+                <h4 class="mb-4 text-danger">Business Hours</h4>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                <p>Sunday: Closed</p>
+            </div>
+            <hr class="hline">
+            <h4 class="mb-4">Follow Us</h4>
+            <p>
+                <a href="#" class="me-3 hicone"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#" class="me-3 hicone"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="#" class="me-3 hicone"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#" class="me-3 hicone"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" class="me-3 hicone"><i class="fab fa-youtube fa-2x"></i></a>
+                <a href="#" class="me-3 hicone"><i class="fab fa-whatsapp fa-2x"></i></a>
+                <a href="#" class="me-3 hicone"><i class="fab fa-telegram fa-2x"></i></a>
+                <a href="#" class="me-3 hicone"><i class="fab fa-snapchat fa-2x"></i></a>
+            </p>
+        </div>
+        <div class="col-sm-7">
+            <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.854737555212!2d76.76584651172745!3d30.722483874483224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fedad88991a07%3A0xb4de516e9171f70e!2sNetmax%20Technologies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1765522409799!5m2!1sen!2sin" height="450" style="border:0;width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+ </div>
+
+ <div class="container mt-5">
+     <div class="row mt-4">
+           <div class="col-sm-8">
+              <h1 class="text-danger mb-5">Our Reception Team is Here to Help You!</h1> 
+              <form action="/contact" method="post">
+                <div class="mt-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mt-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mt-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="mt-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-danger">Send Message</button>
+                </div>
+              </form>
+
+           </div>
+           <div class="col-sm-3">
+             <img src="../public/images/Recptionwomen.jpg" >
+           </div>"
+     </div>
+ </div>
+
+<% if(locals.msg) { %>
+<script>
+    alert("<%= msg %>");
+</script>
+<% } %>
+
+<%- include('CDN/javascript.ejs') %>
+<%- include('chat/chat.ejs') %>
+   <%- include('Footer/Dashboard_Footer.ejs') %>
+</body>
+</html>
