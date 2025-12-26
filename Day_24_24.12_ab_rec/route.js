@@ -5,6 +5,7 @@ const path=require('path');
 const Apoint_Object=require('./Controller/AppointmentController')
 const cont_obj=require('./Controller/ContactController')
 const user_obj=require('./Controller/AuthenticateController')
+const admin_obj = require('./Controller/AdminController')
 
 
 const Patient_image_storage = multer.diskStorage({
@@ -74,5 +75,11 @@ myroute.use('/p_profile_complete',Patient_upload.single("userphoto"),(req,res)=>
 myroute.use('/Patient_Appointment',(req,res)=>
 {
     Apoint_Object.get_records(req,res)
+})
+myroute.use('/Patient_Profile',(req,res)=>{
+    user_obj.Patient_Profile(req,res)
+})
+myroute.use('/cpanel',(req,res)=>{
+    admin_obj.Check_admin(req,res)
 })
 module.exports=myroute;

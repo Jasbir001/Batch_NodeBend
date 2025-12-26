@@ -36,6 +36,10 @@ const user=
     {
         const q=`update user set mobile='${data.Mobile}',ayusmaan_card='${data.Ayushcard}',dis_history='${data.Dhistoty}',photo='${data.Profile_Photo}',profile_complete='yes' where email='${data.Email}'`
          db.query(q,callback)
+    },
+    Fetch_Profile:(data,callback)=>{
+        const q =`select * from user where email = '${data.Email}'`
+        db.query(q,callback)
     }
 
 }

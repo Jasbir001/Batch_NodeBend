@@ -135,7 +135,7 @@ class Sets extends Auth
             }
             else 
             {
-                    if(req.body.confpassword==req.body.newpassword)
+                    if(req.body.confpassword == req.body.newpassword)
                     {
                         const bcrpyt_salt=await bcrypt.genSalt(10)
                        const hpassw=await bcrypt.hash(req.body.newpassword,bcrpyt_salt)
@@ -209,6 +209,26 @@ class Sets extends Auth
 
             }
 
+      }
+      Patient_Profile(req,res){
+            if(!req.session.patient_email)
+            {
+                res.render('Login',{mesg:"Please Login Here"})
+            }
+            else 
+            {
+                const data = {
+                    Email : req.session.patient_email 
+                }
+                usermodel.Fetch_Profile(data,(err,result)=>{
+                    if(err){
+                    res.render('Pchangepassword',{mesg:"Failed to Load Profile"})
+                    }
+                    else{
+                        res.render('Pprofile',{record:result})
+                    }
+                })
+            }
       }
 }
 module.exports=new Sets();
