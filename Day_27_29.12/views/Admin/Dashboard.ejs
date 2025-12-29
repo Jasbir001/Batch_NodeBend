@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <%- include('CDN/bootstrap.ejs') %>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-3">
+          <div class="bg-danger text-white p-3">
+          <div class="text-center">
+          <a class="navbar-brand" href="/Patient_Dashboard"><img src="../public/image/logo.png" width="100px" height="100px" /></a>
+          <h6 class="text-center mt-4">Rohan Kumar</h6>
+          </div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/admin_dashboard">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/useraccounts">View User Accounts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/manageenquiry">Manage Enquiry</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/managedoctor">Manage Doctor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pushnotification">Publish Notification</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/managenotification">Manage Notification</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/addadmin">Add New admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link donate" href="/admin_logout">Logout</a>
+        </li>
+
+      </ul>
+          </div>
+      </div>
+      <div class="col-sm-5">
+        <h2 class="text-center text-danger mt-4 mb-5"> Admin Dashboard</h2>
+        <div class="row justify-content-center">
+          <div class="col-sm-10">
+            <div class="row justify-content-between text-center">
+
+        <div class="col-sm-3 box bg-success text-white">
+          <div class="count">722</div>
+          <div class="label">Total Patient</div>
+        </div>
+
+        <div class="col-sm-3 box bg-primary text-white">
+          <div class="count">222</div>
+          <div class="label">Medical History</div>
+        </div>
+
+        <div class="col-sm-3 box bg-info text-white">
+          <div class="count small-text">24-12-2025</div>
+          <div class="label">Current Date</div>
+        </div>
+          </div>
+    </div>
+         </div>
+
+        <form action="/pushnotification" method="post">
+            <div class="form-group mt-3">
+
+        </form>
+
+
+
+
+      </div>
+   
+
+      <div class="col-sm-4">
+        <div class="img">
+                    <img src="../public/image/Pdashwomen.jpg"style="width:100%" >
+        </div>
+      </div>
+
+      <div style="position: absolute; top:36%; left:-8%; width:100%">
+        <h3 class="text-center text-danger donate">Welcome Admin Dashboard</h3>
+      </div>
+
+
+  </div>
+</div>
+
+
+<%- include('CDN/javascript.ejs') %>
+<%- include('chat/chat.ejs') %>
+</body>
+</html>
+

@@ -1,0 +1,73 @@
+.hospital_navbar{
+    background-color: rgba(249, 52, 22, 0.968); 
+}
+.hospital_navbar a{
+    color:rgb(239, 244, 244);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.hospital_navbar a:hover{
+    color:grey;
+}
+.hospital_navbar button:hover{
+    background-color: blue;
+    color: rgb(246, 246, 250);
+}
+.scroll-mseg{
+    background-color: rgba(249, 52, 22, 0.968); 
+    cursor:pointer;
+}
+.donate{
+    animation:blinker 2s linear infinite;
+}
+@keyframes blinker{
+    50% {
+        opacity:0;
+    }
+}
+
+
+.hline{
+    color:red;
+
+}
+
+.hicone{
+    color:red;
+}
+.login_div_margin_bottom
+{
+  margin-bottom:4%;
+}
+
+.box {
+  height: 130px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.count {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.small-text {
+  font-size: 20px;
+}
+
+.label {
+  font-size: 14px;
+}
+
+
+
+
+
+.bg-white:hover 
+{
+    background-color: black !important;
+    color:white !important;
+    border: none !important;
+} 
