@@ -13,9 +13,7 @@ class contact
                     Name:req.body.name,
                     Email:req.body.email,
                     Subject:req.body.subject,
-                    Message:req.body.message,
-         
-                    
+                    Message:req.body.message        
             }
             contact_modal.create(data,(err)=>{
                 if(err){

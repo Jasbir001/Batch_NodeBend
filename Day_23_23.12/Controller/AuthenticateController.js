@@ -2,7 +2,7 @@ const usermodel=require('../Modal/useraccount')
 const bcrypt=require('bcryptjs')
 class Auth 
 {
-      checkAuth(req,res)
+    checkAuth(req,res)
      {
          if(req.method=='GET')
          {
@@ -13,7 +13,7 @@ class Auth
             const data={
                 Email:req.body.email
             }
-            usermodel.check_login(data,async(err,result)=>{
+            usermodel.check_login(data,async (err,result)=>{
                             if (err)
                             {
                                 res.render('Login',{mesg:" Error in Login"+err})
@@ -29,7 +29,7 @@ class Auth
                                     {
                                         req.session.patient_email = result[0].email
                                         const profile_check_status = result[0].profile_complete;
-                                        if(profile_check_status=='no')
+                                        if(profile_check_status=="no")
                                         {
                                             res.render('Profile_Uncomplete',{mesg:result[0].email})
                                         }
@@ -67,8 +67,8 @@ class Auth
                  }
                  else 
                  {
-                       const bcrpyt_salt=await bcrpyt.genSalt(10)
-                       const hpassw=await bcrpyt.hash(req.body.password,bcrpyt_salt)
+                       const bcrpyt_salt=await bcrypt.genSalt(10)
+                       const hpassw=await bcrypt.hash(req.body.password,bcrpyt_salt)
                         const data={
                         Name:req.body.username,
                         Email:req.body.email,
@@ -112,11 +112,10 @@ class Auth
      }
 }
 
-
 class Sets extends Auth 
 {
      async Patients_Setting(req,res)
-      {
+    {
         if(req.method=='GET')
          {
             if(!req.session.patient_email)
@@ -138,8 +137,8 @@ class Sets extends Auth
             {
                     if(req.body.confpassword == req.body.newpassword)
                     {
-                        const bcrpyt_salt=await bcrypt.genSalt(10)
-                        const hpassw=await bcrypt.hash(req.body.newpassword,bcrpyt_salt)
+                        const bcrpyt_salt= await bcrypt.genSalt(10)
+                        const hpassw= await bcrypt.hash(req.body.newpassword,bcrpyt_salt)
                         const data={
                              useremail:req.session.patient_email,
                              newpassword:hpassw
@@ -156,7 +155,6 @@ class Sets extends Auth
                                     if(ismatch)
                                     {                
                                         usermodel.change_password(data,(err)=>
-                                
                                         {
                                          if(err)
                                          {
@@ -172,84 +170,48 @@ class Sets extends Auth
                                     {
                                         res.render('Pchangepassword',{mesg:"Old Password Incorrect"})
                                     }
-                            }
-                            })
-                    }
-                    else 
-                    {
-                        res.render('Pchangepassword',{mesg:"Password Mismatch"})
-                    }
+                                            }
+                                            })
+                                    }
+                                    else 
+                                    {
+                                        res.render('Pchangepassword',{mesg:"Password Mismatch"})
+                                    }
                 }
          }
       }
-      Patients_Profile_Complete(req,res)
+    Patients_Profile_Complete(req,res)
       {
-    if(!req.session.patient_email)
-    {
-        res.render('Login',{mesg:"Please Login Here"})
-    }
-    else{
-        const data = {
-            Email:req.body.email,
-            Mobile:req.body.mobile,
-            Ayushcard:req.body.ayushcard,
-            Dhistory:req.body.dhistory,
-            Profile_Photo:req.file.filename   
-        };
+                        if(!req.session.patient_email)
+                        {
+                            res.render('Login',{mesg:"Please Login Here"})
+                        }
+                        else
+                        {
+                            const data = {
+                                Email:req.session.patient_email,
+                                Mobile:req.body.mobile,
+                                Ayushcard:req.body.ayushcard,
+                                Dhistory:req.body.dhistory,
+                                Profile_Photo:req.file.filename,
+                        
+                            }
+                      
 
-        usermodel.Patient_Profile_update(data,(err)=>{
-            if(err)
-            {
-                res.render('Login',{mesg:"Error in profile Completion Contact Again"+err})
+                            
+                        
+                            usermodel.Patient_Profile_update(data,(err)=>{
+                                if(err)
+                                {
+                                    res.render('Login',{mesg:"Error in profile Completion Contact Again"})
+                                }
+                                else
+                                {
+                                    res.render('Login',{mesg:"Profile Updated Successfully Please Login again"})
+                                }
+                            })
             }
-            else
-            {
-                res.render('Login',{mesg:"Profile Updated Successfully Please Login again"})
-            }
-        })
     }
-      }
 }
-module.exports=new Sets();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports=new Sets(); 
 

@@ -20,6 +20,39 @@ class AppointmentController{
                 }
             })
         }
+
+    //     get_records(req,res)
+    // {
+    //      const data={
+    //          Email:req.session.patient_email
+    //      }
+    //      if(!req.session.patient_email)
+    //         {
+    //             res.render('Login',{mesg:"Please Login Here"})
+    //         }
+    //         else 
+    //         {
+    //             appointmentModel.list_appointment_search(data,(err,result)=>
+    //             {
+    //                  if(err)
+    //                  {
+    //                      res.render('PAppointment_List',{mesg:"Error While Fetch Contact Admin"})
+    //                  }
+    //                  else 
+    //                  {
+    //                      if(result.length>0)
+    //                      {
+                            
+    //                         res.render('PAppointment_List',{datas:result})
+    //                      }
+    //                      else 
+    //                      {
+    //                         res.render('PAppointment_List',{mesg:"Not Any Appointment Exists Realted To This Account"})
+    //                      }
+    //                  }
+    //             })
+    //         }
+    // }
 }
 
 

@@ -8,14 +8,14 @@ const user_obj = require('./Controller/AuthenticateController')
 
 
 
-const  Patient_image_storage = multer.diskStorage({
+const Patient_image_storage = multer.diskStorage({
     destination:'./public/Patient_Photo/',
     filename:function(req,file,cb)
     {
         cb(null,Date.now()+path.extname(file.originalname))
     }
 })
-const Patient_upload = multer({storage: Patient_image_storage})
+const Patients_upload = multer({storage: Patient_image_storage})
 
 
 
@@ -50,7 +50,7 @@ myroute.use('/Patient_logout',(req,res)=>{
 myroute.use('/Patient_settings',(req,res)=>{
     user_obj.Patients_Setting(req,res)
 })
-myroute.post('/p_profile_complete',Patient_upload.single('userphoto'),(req,res)=>{
+myroute.use('/p_profile_complete',Patients_upload.single("userphoto"),(req,res)=>{
     user_obj.Patients_Profile_Complete(req,res)
 })
 

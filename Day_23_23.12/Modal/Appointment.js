@@ -15,6 +15,11 @@ const Appointment=
     list_appointment:(callback)=>{
         const q= `select * from appointment`
         db.query(q,callback)
+    },
+    list_appointment_search:(data,callback)=>
+    {
+        const q=`select * from appointment where email='${data.Email}'`
+        db.query(q,callback)
     }
 }
 
