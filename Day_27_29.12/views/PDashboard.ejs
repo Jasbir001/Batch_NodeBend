@@ -26,7 +26,7 @@
               <a class="nav-link bg-white text-danger" href="/Patient_Dashboard">My Enquiry</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link bg-white text-danger" href="/Patient_Dashboard">Book Appointment</a>
+              <a class="nav-link bg-white text-danger" href="/Patient_Appointment">Book Appointment</a>
               </li>
               <li class="nav-item">
             <a class="nav-link bg-white text-danger" href="/Patient_Dashboard">Medical History</a>
@@ -70,34 +70,17 @@
         </div>
           </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
          </div>
+          <div style="position: absolute; top:38%;left:30%">
+          <h3 class="text-center text-danger donate">Latest Notification</h3>
+           <marquee direction="up" class="mt-5">
+            <h5 class="mb-4"><a href="">Blood Donation Camp Held on 26 Dec 2025</a></h5>
+            <h5 class="mb-4"><a href="">Free Eyes Checkup By NGO india Pvt ltd held on 21-12-2025</a></h5>
+            <h5 class="mb-4"><a href="">Distribute Eyes Drop By Ramdev Baba Next Camp Read More</a></h5>
+            <h5 class="mb-4"><a href="">Donate Your Eyes ,Know The Procedure </a></h5>
+            <h5 class="mb-4"><a href="">How To Claim Health Insurance Know Your Company Registerd With Us? </a></h5>
+           </marquee>
+        </div>
 
 
 
@@ -110,23 +93,10 @@
                     <img src="../public/image/Pdashwomen.jpg"style="width:100%" >
         </div>
       </div>
-
-
   </div>
 </div>
 
 
-<div style="position:absolute; top:36%; left:30%">
-  <h3 class="text-center text-danger donate">Latest Notification</h3>
-  <marguee direction="up" class="mt-5" onmouseover="this.stop();" onmouseout="this.start();">
-    <% for(var i=0; i<data.length)    %>
-
-
-
-
-    
-  </marguee>
-</div>
 
 
 <%- include('CDN/javascript.ejs') %>

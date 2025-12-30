@@ -33,9 +33,19 @@ const user=
         console.log(data.useremail);
          db.query(q,callback)
     },
+    // Patient_Profile_update:(data,callback)=>{
+    //     const q =`update user set mobile ='${data.Mobile}',ayusmaan_card='${data.Ayushcard}',dis_history='${data.Dhistory}', photo ='${data.Profile_Photo}', profile_complete='yes' where email ='${data.Email}'`
+    //     db.query(q,callback)
+    // }
+
     Patient_Profile_update:(data,callback)=>{
-        const q =`update user set mobile ='${data.Mobile}',ayusmaan_card='${data.Ayushcard}',dis_history='${data.Dhistory}', photo ='${data.Profile_Photo}', profile_complete='yes' where email ='${data.Email}'`
+        const q =`update user set mobile ='${data.Mobile}',ayusmaan_card='${data.Ayushcard}',dis_history='${data.Dhistory}', profile_complete='yes' where email ='${data.Email}'`
         db.query(q,callback)
+    },
+    Fetch_Profile:(data,callback)=>
+    {
+      const q=`select * from user where email='${data.Email}'`
+      db.query(q,callback)
     }
 }
 

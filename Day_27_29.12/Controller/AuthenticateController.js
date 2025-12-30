@@ -1,5 +1,4 @@
 const usermodel=require('../Modal/useraccount')
-const notify_modal = require('../Modal/Notification')
 const bcrypt=require('bcryptjs')
 class Auth 
 {
@@ -99,20 +98,13 @@ class Auth
                 res.render('Login',{mesg:"Please Login Here"})
             }
             else{
-                notify_modal.fetch_notification((err,record)=>{
-                    if(err)
-                    {
-                        res.render('Login',{mesg:"Problem In Loading Dashboard"})
-                    }
-                    else{
-                        res.render('PDashboard',{data:record})
-                    }
-                })
-                  
-
+                res.render('PDashboard')
             }
          }
-    
+         else 
+         {
+
+         }
      }
      Patients_Logout(req,res){
         req.session.destroy()
@@ -201,7 +193,7 @@ class Sets extends Auth
                                 Mobile:req.body.mobile,
                                 Ayushcard:req.body.ayushcard,
                                 Dhistory:req.body.dhistory,
-                                Profile_Photo:req.file.filename,
+                                // Profile_Photo:req.file.filename,
                         
                             }
                             usermodel.Patient_Profile_update(data,(err)=>{
@@ -216,6 +208,30 @@ class Sets extends Auth
                             })
             }
     }
+    Patient_Profile(req,res)
+      {
+           if(!req.session.patient_email)
+            {
+                res.render('Login',{mesg:"Please Login Here"})
+            }
+            else 
+            {
+                 const data={
+                    Email:req.session.patient_email
+                 }
+                 usermodel.Fetch_Profile(data,(err,result)=>{
+                            if (err)
+                            {
+                                res.render('Pprofile',{mesg:" Failed To Load Profile"})
+                            }
+                            else
+                            {
+                                res.render('Pprofile',{record:result})
+                            }
+                 })
+
+            }
+      }
 }
 module.exports=new Sets(); 
 

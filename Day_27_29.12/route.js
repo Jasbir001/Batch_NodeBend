@@ -4,18 +4,19 @@ const multer = require('multer');
 const path = require('path');
 const Apoint_Object = require('./Controller/AppointmentController');
 const cont_obj = require('./Controller/ContactController');
-const user_obj = require('./Controller/AuthenticateController')
+const user_obj = require('./Controller/AuthenticateController');
+const admin_obj = require('./Controller/AdminController')
 
 
 
-const Patient_image_storage = multer.diskStorage({
-    destination:'./public/Patient_Photo/',
-    filename:function(req,file,cb)
-    {
-        cb(null,Date.now()+path.extname(file.originalname))
-    }
-})
-const Patients_upload = multer({storage: Patient_image_storage})
+// const Patient_image_storage = multer.diskStorage({
+//     destination:'./public/Patients_Photo/',
+//     filename:function(req,file,cb)
+//     {
+//         cb(null,Date.now()+path.extname(file.originalname))
+//     }
+// })
+// const Patients_upload = multer({storage: Patient_image_storage})
 
 
 
@@ -50,10 +51,33 @@ myroute.use('/Patient_logout',(req,res)=>{
 myroute.use('/Patient_settings',(req,res)=>{
     user_obj.Patients_Setting(req,res)
 })
-myroute.use('/p_profile_complete',Patients_upload.single("userphoto"),(req,res)=>{
+// myroute.use('/p_profile_complete',Patients_upload.single("userphoto"),(req,res)=>{
+//     user_obj.Patients_Profile_Complete(req,res)
+// })
+myroute.use('/p_profile_complete',(req,res)=>{
     user_obj.Patients_Profile_Complete(req,res)
 })
-myroute.use('/pushnotification',(req,res)=>{
+myroute.use('/Patient_Appointment',(req,res)=>{
+    Apoint_Object.get_records(req,res)
+})
+myroute.use('/Patient_profile',(req,res)=>
+{
+    user_obj.Patient_Profile(req,res)
+})
+myroute.use('/cpanel',(req,res)=>
+{
+    admin_obj.Check_admin(req,res)
+})
+myroute.use('/admin_dashboard',(req,res)=>
+{
+    admin_obj.Dashboard(req,res)
+})
+myroute.use('/admin_logout',(req,res)=>
+{
+    admin_obj.Logout(req,res)
+})
+myroute.use('/pushnotificaton',(req,res)=>
+{
     admin_obj.notification(req,res)
 })
 

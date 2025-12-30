@@ -12,7 +12,7 @@ const Appointment=
         const q =`delete from appointment where id =${data.id}`
         db.query(q,callback)
     },
-    list_appointment:(callback)=>{
+    list_appointment:(callback) => {
         const q= `select * from appointment`
         db.query(q,callback)
     },
@@ -21,6 +21,7 @@ const Appointment=
         const q=`select * from appointment where email='${data.Email}'`
         db.query(q,callback)
     }
+  
 }
 
 module.exports= Appointment

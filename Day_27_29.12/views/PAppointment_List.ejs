@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +26,7 @@
               <a class="nav-link bg-white text-danger" href="/Patient_Dashboard">My Enquiry</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link bg-white text-danger" href="/Patient_Dashboard">Book Appointment</a>
+              <a class="nav-link bg-white text-danger" href="/Patient_Appointment">Book Appointment</a>
               </li>
               <li class="nav-item">
             <a class="nav-link bg-white text-danger" href="/Patient_Dashboard">Medical History</a>
@@ -71,46 +70,14 @@
         </div>
           </div>
     </div>
-            <h3 class="text-center text-danger mt-4">Manage Accounts</h3>
-            <div style="position: relative; top:55%;left:-15%">
-          <div class="container mt-5">
-            <div class="row mt-2">
-              <div class="col-sm-9 offset-sm-4 mt-3">
-                <div class="card">
-                  <div class="card-header text-center">
-                    <h3>Change Password</h3>
-                  </div>
-                  <div class="card-body">
-                    <form action="/Patient_settings" method="post">
-                    <div class="form-group mb-3">
-                      <label for="old">Old Password</label>
-                      <input type="password" class="form-control" id="old" name="oldpassword" required>
-                      <label for="newpassword"class="mt-3">New Password</label>
-                      <input type="password" class="form-control" id="newpassword" name="newpassword" required>
-                      <label for="confpassword" class="mt-3">Confirm Password</label>
-                      <input type="password" class="form-control" id="confpassword" name="confpassword" required>
-
-                      </div>
-                          <button type="submit" class="btn btn-danger w-100">Submit</button>
-                        
-                    </form>
-                    <% if(locals.mesg)
-                    { %> 
-                        <h6 align="center"><%= mesg %> </h6>
-                    <% }
-                    %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-</div>
          </div>
 
 
 
 
       </div>
+   
+
       <div class="col-sm-4">
         <div class="img">
                     <img src="../public/image/Pdashwomen.jpg"style="width:100%" >
@@ -119,44 +86,58 @@
   </div>
 </div>
 
-<!-- <div style="position: absolute; top:36%;left:-8%; width:100%;">
-          <h3 class="text-center text-danger">Manage Accounts</h3>
-             <div class="container mt-5">
-               <div class="row mt-4">
-                   <div class="col-sm-4 offset-sm-4 mt-3">
-                <div class="card">
-                <div class="card-header text-center">
-                    <h3>Change Password</h3>
-                </div>
-                <div class="card-body">
-                    <form action="/Patient_settings" method="post">
-                        <div class="form-group mb-3">
-                            <label for="old">Old Password</label>
-                            <input type="password" class="form-control" id="old" name="oldpassword" required>  
-                            <label for="newpassword" class="mt-3">New Password</label>
-                            <input type="password" class="form-control" id="newpassword" name="newpassword" required>
-                            <label for="confpassword" class="mt-3">Confirm Password</label>
-                            <input type="password" class="form-control" id="confpassword" name="confpassword" required>
-                        </div>
-                        <button type="submit" class="btn btn-danger w-100">Submit</button>
-                    </form>
-                </div>
+ <div style="position: absolute; top:38%;left:21%">
+         <h3 class="text-center text-danger">My Appointments</h3>
+             <div class="container mt-3">
+               <div class="row mt-2">
+                   <div class="col-sm-10 offset-sm-1 mt-3">
+                  <% if(locals.datas) 
+                  {%>
+                     <table class="table table-primary table-striped-columns" id="palist">
+                       <thead>
+                             <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email_Id</th>
+                                <th>Phone</th>
+                                <th>PDate</th>
+                                <th>PTime</th>
+                                <th>Address</th>
+                             </tr>
+                       </thead>
+                       <tbody>
+                          <% for(var i=0;i<datas.length;i++)
+                          {%>
+                              <tr>
+                                    <td><%=datas[i].id%></td>
+                                    <td><%=datas[i].name%></td>
+                                    <td><%=datas[i].email%></td>
+                                    <td><%=datas[i].phone%></td>
+                                    <td><%=datas[i].presefered_date%></td>
+                                    <td><%=datas[i].preffer_time%></td>
+                                    <td><%=datas[i].address%></td>
+                              </tr>
+                          <%}%>
+                        </tbody>
+                     </table>
+                     <% } %>
+                
                     <% if(locals.mesg)
                     {%>  
                         <h6 align="center"><%=mesg%></h6>
                     <%}%>
-                </div>
+           
         </div>
                </div>
              </div>
-        </div> -->
+        </div>
 
 
 <%- include('CDN/javascript.ejs') %>
 <%- include('chat/chat.ejs') %>
+<script>
+  $('#palist').DataTable();
+</script>
 </body>
 </html>
-
-
-
 
