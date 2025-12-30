@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('CDN/bootstrap.ejs') %>
+
+</head>
+<body>
+    <%- include ('Header/Home_Header') %>
+    <div class="container mt-5 login_div_margin_bottom">
+        <div class="row mt-3">
+            <div class="col-sm-4 offset-sm-4 mt-3">
+                <img src="../public/image/login.jpg" class="img-fluid mx-auto d-block" alt="Logo" style="width:180px;height:180px;">
+                <div class="card">
+                    <div class="card_header text-center">
+                        <h3>Complete Your Profile</h3>
+                    </div>
+                   <div class="card-body">
+                    <form action="/p_profile_complete" method="post">
+                        <div class="form-group mb-3">
+                            <label for="mobile">Mobile</label>
+                            <input type="number" class="form-control" id="mobile" name="mobile"  required>
+                
+                            <label for="ayushcard">Ayushman Card NO</label>
+                            <input type="text" class="form-control" id="ayushcard" name="ayushcard"  required>
+                                                        
+                            <label for="dhistory">Diseases History</label>
+                            <textarea class="form-control" id="dhistory" name="dhistory"  required></textarea>
+
+                            <!-- <label for="userphoto">Profile Photo</label>
+                            <input type="file" class="form-control" id="userphoto" name="userphoto"  required/> -->
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100">Proceed</button>
+                    </form>
+                    <a href="/Patient_logout" class="d-block mt-3 text-center text-danger">Logout</a>
+
+                   </div> 
+                   <% if(locals.mesg)
+                   { %>  
+                        <h6 align="center"><%= mesg%> </h6>
+                    <% }
+                    %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <%  if(locals.useremail)
+            { %>
+                <script>document.getElementById("email").value='<%= useremail %>'</script>
+            <% }
+        %>
+
+    <%- include ('Footer/Dashboard_footer') %>
+    <%- include ('CDN/javascript') %>
+    <%- include ('Chat/chat.ejs') %> 
+</body>
+</html>

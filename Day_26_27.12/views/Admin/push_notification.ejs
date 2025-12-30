@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <%- include('../CDN/bootstrap.ejs') %>
+</head>
+<body>
+<div class="d-flex">
+<%- include('../Header/Admin_Header.ejs') %> 
+<!-- Right Side------ -->
+
+  <div class="flex-grow-1 bg-light p-2">
+      <div class="container-fluid">
+        <h2 class="text-center text-danger mt-4 mb-5">Dashboard</h2>
+        <div class="row">
+                 
+                <div class="col-sm-2 bg-warning text-white hg d-flex justify-content-center">
+                  <div class="graph">
+                     <div class="count">722</div>
+                     <div class="label">Total Patient's</div>
+                  </div>
+                </div>
+
+                 <div class="col-sm-2 bg-success text-white hg d-flex justify-content-center">
+                    <div class="graph">
+                      <div class="count">224</div>
+                      <div class="label">Book Appointment</div>
+                  </div>
+                </div>
+                <div class="col-sm-2 bg-primary text-white hg d-flex justify-content-center">
+                    <div class="graph">
+                      <div class="count">2222</div>
+                      <div class="label">Publish Notification</div>
+                    </div>
+                </div>
+                <div class="col-sm-2 bg-info text-white hg d-flex justify-content-center">
+                   <div class="graph">
+                      <div class="count">24-12-2025</div>
+                      <div class="label">Current Date</div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                    <img src="../public/images/Pdashwomen.png"style="height:60%;" >
+                </div>
+       </div>
+      </div>      
+ 
+</div>
+ 
+        
+          <div style="position: absolute; top:36%;left:-8%; width:100%;">
+          <h3 class="text-center text-danger">Publish Notofication</h3>
+             <div class="container mt-5">
+               <div class="row mt-4">
+                   <div class="col-sm-4 offset-sm-4 mt-3">
+                <div class="card">
+                <div class="card-header text-center">
+                    <h3>Fill The Details</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/pushnotificaton" method="post">
+                        <div class="form-group mb-3">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" required>  
+                            <label for="Message" class="mt-3">Message</label>
+                            <textarea class="form-control" id="Message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100">Submit</button>
+                    </form>
+                </div>
+                    <% if(locals.mesg)
+                    {%>  
+                        <h6 align="center"><%=mesg%></h6>
+                    <%}%>
+           </div>
+        </div>
+               </div>
+             </div>
+        </div>
+
+<!-- Right Side End -->
+
+<%- include('../CDN/javascript.ejs') %>
+<%- include('../chat/chat.ejs') %>
+</body>
+</html>
