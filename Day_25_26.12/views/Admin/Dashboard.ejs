@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <%- include('../CDN/bootstrap.ejs') %>
+</head>
+<body>
+<div class="d-flex">
+<%- include('../Header/Admin_Header.ejs') %> 
+<!-- Right Side------ -->
+
+  <div class="flex-grow-1 bg-light p-2">
+      <div class="container-fluid">
+        <h2 class="text-center text-danger mt-4 mb-5">Dashboard</h2>
+        <div class="row">
+                 
+                <div class="col-sm-2 bg-warning text-white hg d-flex justify-content-center">
+                  <div class="graph">
+                     <div class="count">722</div>
+                     <div class="label">Total Patient's</div>
+                  </div>
+                </div>
+
+                 <div class="col-sm-2 bg-success text-white hg d-flex justify-content-center">
+                    <div class="graph">
+                      <div class="count">224</div>
+                      <div class="label">Book Appointment</div>
+                  </div>
+                </div>
+                <div class="col-sm-2 bg-primary text-white hg d-flex justify-content-center">
+                    <div class="graph">
+                      <div class="count">2222</div>
+                      <div class="label">Publish Notification</div>
+                    </div>
+                </div>
+                <div class="col-sm-2 bg-info text-white hg d-flex justify-content-center">
+                   <div class="graph">
+                      <div class="count">24-12-2025</div>
+                      <div class="label">Current Date</div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                    <img src="../public/images/Pdashwomen.png"style="height:60%;" >
+                </div>
+       </div>
+      </div>      
+ 
+</div>
+ 
+        
+        <div style="position: absolute; top:36%;left:30%">
+          <h3 class="text-center text-danger donate">Welcome Admin Dashboard</h3>
+        </div>
+
+<!-- Right Side End -->
+
+<%- include('../CDN/javascript.ejs') %>
+<%- include('../chat/chat.ejs') %>
+</body>
+</html>
