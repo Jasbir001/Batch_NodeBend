@@ -8,12 +8,11 @@
 </head>
 <body>
 <%- include('PDashboard_bar/pbar') %>
-
- <div style="position: absolute; top:36%;left:-8%; width:100%;">
-          <h3 class="text-center text-danger">My Appointments</h3>
-             <div class="container mt-3">
+ <div style="position: absolute; top:36%;left:20%; width:60%;">
+          <h3 class="text-center text-danger mt-4">My Appointments</h3>
+             <div class="container mt-1">
                <div class="row mt-2">
-                   <div class="col-sm-10 offset-sm-1 mt-3">
+                   <div class="col-sm-10 offset-sm-1 mt-2">
                   <% if(locals.datas) 
                   {%>
                      <table class="table table-primary table-striped-columns" id="palist">
