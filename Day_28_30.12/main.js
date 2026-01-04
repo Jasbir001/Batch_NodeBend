@@ -18,7 +18,6 @@ app.use(session(
         }
     }
 ))
-
 app.use(session(
     {
         secret:'admin_user',
@@ -29,7 +28,6 @@ app.use(session(
         }
     }
 ))
-
 app.use(session(
     {
         secret:'patient_appointment_counter',
@@ -40,7 +38,6 @@ app.use(session(
         }
     }
 ))
-
 app.use('/',router_info);
 app.use("/public",express.static(__dirname+'/public'));
 

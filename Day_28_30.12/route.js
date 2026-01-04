@@ -18,8 +18,6 @@ const Patient_image_storage = multer.diskStorage({
 })
 const Patient_upload = multer({storage: Patient_image_storage})
 
-
-
 myroute.get('/',(req,res)=>{
     res.render('home')
 })
@@ -78,9 +76,5 @@ myroute.use('/pushnotificaton',(req,res)=>
 {
     admin_obj.notification(req,res)
 })
-
-
-
-
 
 module.exports=myroute;
