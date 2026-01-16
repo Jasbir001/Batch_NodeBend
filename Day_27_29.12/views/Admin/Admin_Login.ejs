@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <form action="/cpanel" method="post">
                         <div class="form-group mb-3">
-                            <label for="user">username</label>
+                            <label for="user">Username</label>
                             <input type="text" class="form-control" id="users" name="username" required>  
                             <label for="password" class="mt-3">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
@@ -43,10 +43,10 @@
             <script>
                 document.getElementById("users").value='<%=usernames%>';
             </script>
-         <%}%>
+         <%} %>
 
 <%- include('../CDN/javascript.ejs') %>
 <%- include('../chat/chat.ejs') %>
-   <%- include('../Footer/Dashboard_Footer.ejs') %>
+<%- include('../Footer/Dashboard_Footer.ejs') %>
 </body>
 </html>
